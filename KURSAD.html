@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KÜRŞAD</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap');
+
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', system-ui, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #0f1c3a, #1a2a6c, #0f1c3a);
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* Yavaşça kayan mavi glow arka plan */
+  body::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, #4ea7ff33, transparent 70%);
+    filter: blur(180px);
+    animation: moveLight 20s linear infinite;
+    z-index: 0;
+  }
+
+  @keyframes moveLight {
+    0% { transform: translate(-25%, -25%); }
+    50% { transform: translate(25%, 25%); }
+    100% { transform: translate(-25%, -25%); }
+  }
+
+  /* KÜRŞAD yazısı */
+  h1 {
+    position: relative;
+    z-index: 1;
+    font-size: clamp(80px, 15vw, 220px);
+    color: #66d1ff;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 12px;
+    text-shadow: 
+      0 0 20px #66d1ff88,
+      0 0 40px #66d1ff55,
+      0 0 60px #66d1ff44,
+      0 0 80px #66d1ff33;
+    animation: glow 3s ease-in-out infinite alternate;
+  }
+
+  @keyframes glow {
+    from {
+      text-shadow: 
+        0 0 10px #66d1ff88,
+        0 0 20px #66d1ff55,
+        0 0 30px #66d1ff44,
+        0 0 40px #66d1ff33;
+    }
+    to {
+      text-shadow: 
+        0 0 25px #66d1ffcc,
+        0 0 50px #66d1ffaa,
+        0 0 75px #66d1ff88,
+        0 0 100px #66d1ff66;
+    }
+  }
+
+  @media (max-width: 600px){
+    h1 {
+      font-size: clamp(50px, 15vw, 120px);
+      letter-spacing: 8px;
+    }
+  }
+</style>
+</head>
+<body>
+  <h1>KÜRŞAD</h1>
+</body>
+</html>
